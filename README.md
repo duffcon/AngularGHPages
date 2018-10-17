@@ -78,7 +78,7 @@ const appRoutes: Routes =
 
 ```ts
 //a.component.ts
-  public list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
+public list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
 ```
 
 ```ts
@@ -130,7 +130,17 @@ Create a new repository: AngularGHPages
 
 ```
 ng build --prod --output-path docs --base-href AngularGHPages
+git add .
+git commit -m 'message'
+git checkout master
+git merge 1.Branch
 git add remote origin
 git remote add origin https://github.com/duffcon/AngularGHPages.git
 git push -u origin master
 ```
+
+https://github.com/duffcon/AngularGHPages/settings
+
+Scroll down to GitHub Pages > Source master branch /docs folder > Save
+
+Website availabale at: https://duffcon.github.io/AngularGHPages/
