@@ -134,11 +134,6 @@ Build so GHPages can understand it.
 ng build --prod --output-path docs --base-href AngularGHPages
 ```
 
-Duplicate index.html. Rename to 404.html
-```bash
-docs/index.html
-docs/404.html
-```
 
 Website needs To be on master branch: save and merge.
 ```
@@ -159,3 +154,5 @@ https://github.com/duffcon/AngularGHPages/settings
 Scroll down to GitHub Pages > Source master branch /docs folder > Save
 
 Website availabale at: https://duffcon.github.io/AngularGHPages/
+
+Refreshing will give 404 error because...it does...
