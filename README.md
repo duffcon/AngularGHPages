@@ -78,12 +78,12 @@ const appRoutes: Routes =
 
 ```ts
 //a.component.ts
-  private list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
+  public list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
 ```
 
 ```ts
 //b.component.ts
-private list = ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B"];
+public list = ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B"];
 ```
 
 
@@ -112,4 +112,25 @@ a.component.html
         </table>
   </div>
 </div>
+```
+
+
+
+
+```bash
+git add .
+git commit -m 'message'
+git checkout -b 1.One
+```
+
+
+github.com
+
+Create a new repository: AngularGHPages
+
+```
+ng build --prod --output-path docs --base-href AngularGHPages
+git add remote origin
+git remote add origin https://github.com/duffcon/AngularGHPages.git
+git push -u origin master
 ```

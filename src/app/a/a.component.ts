@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./a.component.css']
 })
 export class AComponent implements OnInit {
-  private list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
+  public list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
 
   constructor() { }
 
