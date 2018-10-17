@@ -1,27 +1,115 @@
-# GHPagesTest
+```
+ng new GHPagesTest
+```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+#.gitignore
+.vs/*
+```
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+```bash
+ng generate component Nav
+ng generate component A
+ng generate component B
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install --save jquery
+npm install --save bootstrap
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+```ts
+//app.module.ts
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes =
+  [
+    { path: 'A', component: AComponent },
+    { path: 'B', component: BComponent },
+    { path: '**', component: AComponent }
+  ];
+
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+```
+
+
+
+
+```html
+//app.component.html
+<div >
+  <app-nav></app-nav>
+</div>
+<div class=' col-lg-12 body-content'>
+  <router-outlet></router-outlet>
+</div>
+```
+
+
+```html
+//nav.component.html
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a style="color:whitesmoke" class="navbar-brand">NaV</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" [routerLink]="['A']" [routerLinkActive]="['active']">A <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLink]="['B']" [routerLinkActive]="['active']">B</a>
+
+    </div>
+  </div>
+</nav>
+```
+
+```ts
+//a.component.ts
+  private list = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
+```
+
+```ts
+//b.component.ts
+private list = ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B"];
+```
+
+
+```html
+a.component.html
+<div class="contaier-fluid">
+  <div class="row justify-content-center">
+        <table >
+          <tr *ngFor="let i of list;">
+            <td> {{i}}</td>
+          </tr>
+        </table>
+  </div>
+</div>
+```
+
+
+```html
+a.component.html
+<div class="contaier-fluid">
+  <div class="row justify-content-center">
+        <table >
+          <tr *ngFor="let i of list;">
+            <td> {{i}}</td>
+          </tr>
+        </table>
+  </div>
+</div>
+```
